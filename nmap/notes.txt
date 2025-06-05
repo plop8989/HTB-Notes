@@ -1,5 +1,5 @@
 ---PICKUP AT---
-  Service Performance
+  Firewall and IDS/IPS Evasion
 
 
 --PENTEST NOTES---
@@ -58,6 +58,13 @@
     Specific category: --script <category>
     Defined scripts: --script <name>
 
+---PERFORMANCE---
+  DURING BLACK BOX pentests we don't have all the info to optimize a scan.
+    Nmap has six different timing templates (-T <0-5>). These determine the aggressiveness
+    of our scans.
+  BEING TOO AGGRESSIVE CAN LEAD TO SECURITY SYSTEMS BLOCKING US
+  T0 is the slowest and "stealthiest" and T5 is the fastest and least stealthy
+
 ---ARGUMENTS---
 
   -sn: Disables port scanning
@@ -72,4 +79,4 @@
   -A: Aggressive scan that uses -sV -O --traceroute and default
       NSE scritps.
   --Vuln: uses scripts from the vulnerabilitie scanner category
-   
+  -F: Scans top 100 ports   
