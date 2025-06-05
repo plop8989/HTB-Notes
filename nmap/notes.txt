@@ -1,0 +1,43 @@
+---PICKUP AT---
+  Service Enumeration
+
+
+---SERVICE ENUMERATION---
+  We need to determine the application and its version as 
+    accurately as possible so we can look for known exploits
+
+  ---USES---
+    An initial quick port scan is useful to see available ports
+    This causes less traffic which is good as otherwise the 
+      security mechanisms can discover and block us
+  
+  ---BANNER GRABBING---
+    After a completed 3-way handshake, the server often sends
+      a banner for indentification to let the client know what 
+      service its working with. This is a PSH flag in the TCP
+      header. Sometimes its not immediately provided or 
+      the info can be removed or manipulated.
+    We can manually connect to the SMTP server with NC, grab
+      the banner, and intercept the network traffic using TCPDUMP,
+      we can see what Nmap didnt show us.
+      TCPDUMP: sudo tcpdump -i eth0 host <our ip> and <target ip>
+      Netcat: nc -nv <target ip>
+
+
+---SCRIPTING ENGINE---
+  The scripting engine (NSE) allows for the use of lua 
+    scripts in nmap.
+  Scripts can be defined in several ways 
+    Default scripts: -sC
+    Specific category: --script <category>
+    Defined scripts: --script <name>
+
+
+---ARGUMENTS---
+  
+  --stats-every=Xs: shows scan stats every X seconds
+  -v / -vv: shows open ports directly when they are detected
+  -A: Aggressive scan that uses -sV -O --traceroute and default
+      NSE scritps.
+  --Vuln: uses scripts from the vulnerabilitie scanner category
+  
