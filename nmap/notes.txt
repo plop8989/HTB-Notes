@@ -1,6 +1,33 @@
 ---PICKUP AT---
-  Service Enumeration
+  Service Performance
 
+
+--PENTEST NOTES---
+  During internal pentests we are often provided with an IP list
+
+
+---HOST DISCOVERY---
+  Some firewalls don't allow scans and evasive techniques are needed
+  First step is to determine if the host is alive. By disabling port scanning 
+      nmap automatically pings the host with ICMP echo requests. If the host is alive
+      we will get the same type of ping as a reply.
+  We can also achieve the same result using --reason.
+  Nmap will also determin if the host is alive using ARP pings.
+  ARP pinging can be disabled and ICMP can be used instead
+
+
+---PORT STATES---
+  Open:    Indicates the connection to the port has been established. 
+				      These can be TCP , UDP datagrams , SCTP associations
+  Closed:    Indicates the packet we received has an RST flag
+  Filtered:    Nmap cannot identify whether the port is open or closed 
+				         due to either an error code or no response				
+  Unfiltered: This state only occurs during a TCP-ACK scan. Port is accessible, 
+				         but cannot be determined if its open or closed.
+  Open | Filtered:	If a port doesn't give us a response, Nmap will set it to that state. 
+				        Indicates that a firewall or packet filter may protect the port.
+  Closed | Filtered:	This only occurs in  IP ID Idle scans. Indicates it was impossible to determine if the
+				 port is closed or filtered by a firewall.
 
 ---SERVICE ENUMERATION---
   We need to determine the application and its version as 
@@ -23,7 +50,6 @@
       TCPDUMP: sudo tcpdump -i eth0 host <our ip> and <target ip>
       Netcat: nc -nv <target ip>
 
-
 ---SCRIPTING ENGINE---
   The scripting engine (NSE) allows for the use of lua 
     scripts in nmap.
@@ -32,12 +58,18 @@
     Specific category: --script <category>
     Defined scripts: --script <name>
 
-
 ---ARGUMENTS---
-  
+
+  -sn: Disables port scanning
+  -iL: Scans against addresses in a hosts list [sudo nmap x y z -iL hosts.txt]
+  -oA: Outputs results to specified file [sudo nmap x y z -oA host.txt]
+  -PE: Performs scan using ICMP Echo Requests against the target
+  --packet-trace: Shows all packets sent and received
+  --reason: Displays the reason for a specific result
+  --disable-arp-ping
   --stats-every=Xs: shows scan stats every X seconds
   -v / -vv: shows open ports directly when they are detected
   -A: Aggressive scan that uses -sV -O --traceroute and default
       NSE scritps.
   --Vuln: uses scripts from the vulnerabilitie scanner category
-  
+   
