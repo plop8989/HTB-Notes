@@ -1,5 +1,5 @@
 ---PICKUP AT---
-  Firewall and IDS/IPS Evasion
+  Evasion Lab Hard 
 
 
 --PENTEST NOTES---

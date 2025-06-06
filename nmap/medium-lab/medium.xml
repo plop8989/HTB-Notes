@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Fri Jun  6 02:20:45 2025 as: nmap -Pn -&#45;disable-arp-ping -p53 -sU -sC -oX medium.xml 10.129.139.168 -->
+<nmaprun scanner="nmap" args="nmap -Pn -&#45;disable-arp-ping -p53 -sU -sC -oX medium.xml 10.129.139.168" start="1749201645" startstr="Fri Jun  6 02:20:45 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="1" services="53"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1749201645" endtime="1749201652"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="10.129.139.168" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="udp" portid="53"><state state="open" reason="udp-response" reason_ttl="63"/><service name="domain" method="table" conf="3"/><script id="dns-nsid" output="&#xa;  bind.version: HTB{GoTtgUnyze9Psw4vGjcuMpHRp}"><elem key="bind.version">HTB{GoTtgUnyze9Psw4vGjcuMpHRp}</elem>
+</script></port>
+</ports>
+<times srtt="80260" rttvar="80260" to="401300"/>
+</host>
+<runstats><finished time="1749201652" timestr="Fri Jun  6 02:20:52 2025" summary="Nmap done at Fri Jun  6 02:20:52 2025; 1 IP address (1 host up) scanned in 7.32 seconds" elapsed="7.32" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
