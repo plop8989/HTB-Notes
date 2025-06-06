@@ -1,0 +1,8 @@
+---CONNECTING TO SPECIFIC PORTS IN NETCAT---
+
+on way is with the command: nc -nv -s -p53 X.X.X.X 5000
+
+this attempts to connect to the port 5000 on the target x.x.x.x
+  -n says dont do a dns lookup and just connect to the ip address
+  -v says provide as much info as netcat cat
+  -s specifies the source ip address

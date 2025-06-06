@@ -127,3 +127,4 @@
   -e: Sends all requests through specified interface [-e tun0]
   --dns-server <ns>, <ns>: specifiy dns servers
   --source-port: specify source port of scan
+  -g: shorthand for source port
