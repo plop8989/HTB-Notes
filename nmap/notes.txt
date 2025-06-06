@@ -65,8 +65,47 @@
   BEING TOO AGGRESSIVE CAN LEAD TO SECURITY SYSTEMS BLOCKING US
   T0 is the slowest and "stealthiest" and T5 is the fastest and least stealthy
 
+---FIREWALL & IDS/IPS EVASION---
+  IDS (intrusion detection system)
+  IPS (intrusion prevention system)
+  A port can be filtered for multiple reasons, in some cases firewalls are set to handle 
+    specific connections. The packets are either dropped or rejected.
+  DROPPED PACKETS ARE IGNORED WITH NO RESPONS TO SENT BACK BUT REJECTED PACKETS ARE 
+    SENT BACK TO US WITH AN RST FLAG
+  These packets have different ICMP error codes or contain nothing at all:
+    Net Unreachable
+    Net prohibited
+    Host Unreachable
+    Host Prohibited
+    Port Unreachable
+    Proto Unreachable
+  ---TACTICS---
+    TCP-ACK scans (-sA) is much harder for firewalls & IDS/IPS to filer
+      compared to SYN(-sS) or Connect Scans(sT) as (-sA) only send a TCP
+      packet with an ACK flag
+    Its usefule to have several virtual private servers (VPS) with different IP addresses 
+      to determine if the target is running IDS/IPS systems and a firewall
+    One way to determine this is to scan from a single host (VPS) and it becomes blocked 
+      by the target we know the admin has taken security measures
+      THIS TELLS US WE NEED TO BE QUIETER/STEALTHIER WITH OUR SCANS
+  ---DECOYS---
+    If there is a chance at being blocked, we should use the Decoy Scanning Method (-D).
+      With (-D), Nmap creates random IP addrs and inserts them into the IP header of the 
+      sent packets. We can use (RND: X) to create X amount of decoys and our real IP is
+      placed somewhere between the decoys.
+  ---DNS PROXYING---
+    Nmap performs reverse DNS resolution unless otherwise specified. DNS queries are made
+      over UPD port 53 and TCP port 53.
+    Nmap allows us to specify DNS servers ourselves which is fundamental if we are in a DMZ
+    The company's DNS servers are usually trusted more than random ones from the internet. 
+      We could use them to interact with hosts on the internal network. We can also use TCP
+      port 53 as the source port (--source-port). If the firewall controls this port and 
+      doesn't filter IDS/IPS properly, the TCP packets will be trusted and passed through.
+  
 ---ARGUMENTS---
-
+  -Pn: disable ICMP echo requests
+  -sA: Perform ACK scan on specified ports
+  -sS: Perform SYN scan on specified ports
   -sn: Disables port scanning
   -iL: Scans against addresses in a hosts list [sudo nmap x y z -iL hosts.txt]
   -oA: Outputs results to specified file [sudo nmap x y z -oA host.txt]
@@ -79,4 +118,12 @@
   -A: Aggressive scan that uses -sV -O --traceroute and default
       NSE scritps.
   --Vuln: uses scripts from the vulnerabilitie scanner category
-  -F: Scans top 100 ports   
+  -F: Scans top 100 ports
+  -D: Decoy scan (insert fake IPs inter IP headers)
+  RND:X : Create X amount of IPs [ -D RND: 5]
+  -f: (lowercase F). Fragment the packets. Default size 8 bytes
+  -O: Performs OS scan
+  -S: Scans target using different source IP addr [-S x.x.x.x]
+  -e: Sends all requests through specified interface [-e tun0]
+  --dns-server <ns>, <ns>: specifiy dns servers
+  --source-port: specify source port of scan
