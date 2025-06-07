@@ -25,3 +25,13 @@
     Why can't we see it?
     What image does the unknown create for us?
 
+
+---ENUMERATION METHODOLOGY---
+  Enumeration is a dynamic process. HTB made a static methodology
+    see ./enum-methodology.png
+    This is nested in 6 layers and represents "boundaries we try
+      to pass with the enumeration process".
+    The whole process is divided into three levels:
+      Infastructure-based Enumeration
+      Host-base Enumeration
+      OS-based Enumeration
