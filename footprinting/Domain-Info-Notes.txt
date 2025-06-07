@@ -21,4 +21,41 @@
     their functionality. Services are bound to technical aspects
     needed to provide service. We should take a developer's point
     of view to gain a tecnical insight into the functionality.
-    
+   
+
+   ---ONLINE PRESENCE---
+    Example: A medium sized company hired us to test their entire
+      infastructure. The first point of internet presence could be
+      an SSL CERTIFICATE on the main site.
+    SSL CERTIFICATES often contain multiple subdomains. This means
+      it is likely used fo rseveral domains and they are still active.
+    We can go to sites lke CRT.SH to find more subdomains. They use
+      CERTIFICATE TRANSPARENCY LOGS
+    SHODAN can be used to find devices/systems permantly connected to
+      the internet like IoT deviced
+
+
+---CLOUD RESOURCES---
+  Most common used cloud services are AWS, GCP, and Azure.
+  These are good but not free from vulnerabilities, most commonly
+    due to misconfigurations. S3 Buckets (AWS), Blobs (Azure), 
+    Cloud Storage (GCP), can be accessed without authentication
+    if configured incorrectly
+  An easy way to try and find cloud storage of websites is with 
+    GOOGLE DORKS inurl: & intext:. 
+    Suppose the company's name is "inline":
+      ---SEARCH FOR AWS---
+      intext: inline inurl: amazonaws.com
+      ---SEARCH FOR AZURE---
+      intext: inline inurl: blob.core.windows.net
+  We may also find these links the the page's source code
+  Sites like DOMAIN.GLASS can also tell us a lot about the 
+    infastructure.
+  DOMAIN.GLASS may also show a CLOUDFLARE SECURITY ASSESSMENT status.
+    If it says safe or unsafe or etc we can note this for the
+      second layer (gateway)
+  Another tool is GRAYHATWARFARE. It has many features. It can discover
+    AWS, Azure, and GCP cloud storage, and filter by file format.
+    Therefore once we had found them through google we can also search
+    for them on GrayHatWarefare and discover what files are stored on 
+    the cloud storage.

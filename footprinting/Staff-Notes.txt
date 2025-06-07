@@ -1,0 +1,13 @@
+---STAFF---
+  Finding employees on social mdeia can reveal a lot about
+    the teams' infastructure & makeup. 
+  This can lead to us identifying the technologies, programming
+    languages, and software applications are being used.
+  LinkedIn and Xing are popular platforms for professionals
+  
+  ---JOB POSTS---
+    By looking at a companies job posts it might reveal the   
+      languages and skills they are looking for Ie:
+        being comfortable with different databases (Mysql, Postgress
+        etc), coding languages, frameworks (Flask, Django, ASP.NET).
+
