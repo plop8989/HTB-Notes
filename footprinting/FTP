@@ -29,4 +29,28 @@
       transfers files between client and server processes.
     It doesn't provide user authentication
     TFTP uses UDP making it unreliable
-    
+   
+  If we can upload files to the FTP server connected to a web server
+    that increases the likelyhood of gaining direct access to the
+    webserver and eventually a reverse shell and RCE or even
+    escalating our privileges.
+
+  ---UPLOADING AND DOWNLOADING FILES---
+    To downlaod a file do: get path/to/file.txt
+    To upload a file do: put path/to/file.txt
+
+  ---FOOTPRINTING THE SERVICE---
+    Nmap is useful for this.
+    Scripts are stored at /usr/share/nmap/scripts/
+    We can find scripts with certain words in them with:
+      find / -type f -name "ftp*" 2>/dev/null | grep scripts
+    Given FTP servers usually run on TCP 21 we can scan that port
+      in nmap. We can also do a version scan, aggressive scan,
+      and default script scan against the target
+        sudo nmap -sV -p21 -sC -A x.x.x.x
+      --script-trace will show the progress of NSE scripts
+    If needed, we can use netcat or telnet to interact with the
+      FTP server
+    If the server uses TLS/SSL encryption we can use openssl
+      openssl s_client -connect x.x.x.x:21 --starttls ftp
+      This can also show us the SSL certificate
