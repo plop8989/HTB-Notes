@@ -1,0 +1,32 @@
+---FILE TRANSFER PROTOCOL---
+  FTP runs in the application layer of TCP/IP protocol stack
+    so it runs in the same layer as HTTP or POP.
+  FTP establishes client/server connections through TCP port 21
+    Then both participants establish the data channel via TCP
+    port 20. This channel is used exclusively for data transmission.
+    
+    FTP is either ACTIVE OR PASSIVE
+    
+    ACTIVE: client makes connection on TCP 21 & tells the server which
+      client side port the server can send its responses. However,
+      if a firewall protects the client, the server cant reply as
+      all external connections are blocked. This is why there is a 
+      passive mode
+    
+    PASSIVE: server announces a port where the client can establish
+      the data channel. Since the client starts the connection, the
+      firewall doesn't block it.
+  USUALLY WE NEED CREDENTIALS TO USE FTP. IT IS ALSO A CLEAR-TEXT
+    PROTOCOL SO SOMETIMES IT CAN BE SNIFFED IF CONDITIONS ON THE 
+    NETWORK ARE RIGHT.
+  Sometimes a server offers anonymous FTP where the user may
+    upload or download files with FTP without a password.
+    Due to the associated security risks of public FTP, options
+    for the users are usally limited.
+
+  ---TFTP---
+    Trivial File Transfer Protocol(TFTP) is simpler than FTP and
+      transfers files between client and server processes.
+    It doesn't provide user authentication
+    TFTP uses UDP making it unreliable
+    
