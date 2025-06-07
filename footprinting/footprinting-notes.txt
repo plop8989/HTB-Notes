@@ -1,0 +1,27 @@
+---THE GOAL IS NOT TO GET INTO THE SYSTEMS BUT TO FIND
+      ---ALL THE POSSIBLE WAYS TO GET THERE---
+
+---NOTABLE PRINCIPLES---
+  1. There is more than meets the eye. Consider all points of view
+  2. Distinguish between what we see and what we don't see.
+  3. There are always more ways to gain more info. Understand the target
+
+
+---ENUMERATION PRINCIPLES---
+  OSINT and ENUMERATION should be done seperately because
+    osing is based only on passive info gathering and
+    doesn't involve active enumeration of a target.
+  Enumeration is a LOOP where we repeatedly gather info
+    based on date we have or have previously discovered.
+  Once we have identified the infastructure we need to examine
+    individual services and protocols.
+  ---QUESTIONS WE NEED TO ANSWER---
+    What can we see?
+    Why are we able to see it?
+    What image does the info create for us?
+    What do we gain from it?
+    How can we use it?
+    What can't we see?
+    Why can't we see it?
+    What image does the unknown create for us?
+
