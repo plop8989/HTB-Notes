@@ -29,9 +29,38 @@
 ---ENUMERATION METHODOLOGY---
   Enumeration is a dynamic process. HTB made a static methodology
     see ./enum-methodology.png
-    This is nested in 6 layers and represents "boundaries we try
-      to pass with the enumeration process".
-    The whole process is divided into three levels:
+  This is nested in 6 layers and represents "boundaries we try
+    to pass with the enumeration process".
+  The 6 layers are:
+      Internet pressence
+      Gateway
+      Accessible Services
+      Processes
+      Privileges
+      OS setup
+  The whole process is divided into three levels:
       Infastructure-based Enumeration
       Host-base Enumeration
       OS-based Enumeration
+  We can view the pentest as a labrynth where we have to identify
+    gaps and find a way inside as quickyl and effectively as possible
+    see ./pentest-labyrinth.png
+    The squares represent gaps/vulnerabilities
+  Not every gap will lead us inside
+  There is always a way in
+
+  ---METHODOLOGY EXAMPLE---
+    Internet presence: Identify all possible target systems and
+      interfaces that can be tested
+    Gateway: Understand what we are dealing with, where it is
+      located in the network and what to watch out for.
+    Accessible Services: Understand the reason and functionality
+      of the target system and gain the needed knowledge to 
+      communicate with teh service and exploit it
+    Processes: Understand what proccesses are doing, where they
+      are getting information from, where they are sending it, and
+      how the are interconnected.
+    Privileges: See what privileges each service/process has and
+      understand what is possible with these privileges
+    OS Setup: See how the admins manage the systems and what 
+      sensitive internal info we can gain from them

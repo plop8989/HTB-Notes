@@ -1,0 +1,24 @@
+---DOMAIN INFORMATION---
+  Domain info isn't just about the subdomains but rather the
+    entire presence on the internet.
+  
+  This info is gathered PASSIVELY WITHOUT DIRECT/ACTIVE SCANS
+  
+  When passively gatherng info we can use third-party services
+  
+  to better understand the company.
+  The first thing we should do is scrutinize/closely examin the
+    main website
+  
+  For example, many IT companies offer app development, IoT,
+    hosting, data science, etc depending on their industry.
+    If we encounter a service we have little knowledge of we should 
+    gain an understanding of it. We should see what it deals with
+    and what opportunities it can give us and see how the company
+    is structured.
+  
+  "What do we see and what do we not see?". We see services but not
+    their functionality. Services are bound to technical aspects
+    needed to provide service. We should take a developer's point
+    of view to gain a tecnical insight into the functionality.
+    
