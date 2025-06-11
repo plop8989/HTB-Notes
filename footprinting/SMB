@@ -1,0 +1,7 @@
+---SMB--- Server Message Block
+  Client-Server protocal
+  Regulates acces to files, directories, & other internet devices on a network
+  Information exchange between different system processes can also be handled by SMB
+
+
+  ESTABLISHES SERVER-CLIENT CONNECTION VIA THREE WAY TCP HANDSHAKE

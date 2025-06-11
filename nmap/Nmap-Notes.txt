@@ -128,3 +128,5 @@
   --dns-server <ns>, <ns>: specifiy dns servers
   --source-port: specify source port of scan
   -g: shorthand for source port
+  --min-rate x: minimum amount of packets sent per second. wouldn't recommend for stealth but 
+                  up to 3000 seems to be stable for machines without firewall or IDS/IPS
